@@ -1,0 +1,150 @@
+1  sudo apt-get update
+    2  sudo apt-get upgrade
+    3  sudo apt-get install apache2
+    4  sudo ufw app list
+    5  sudo ufw allow 'Apache Full'
+    6  sudo ufw status
+    7  sudo systemctl status apache2
+    8  sudo apt-get install mysql-server
+    9  sudo mysql_secure_installation
+   10  sudo apt-get install -y python-software-properties
+   11  sudo add-apt-repository -y ppa:ondrej/php
+   12  sudo apt-get update -y
+   13  sudo apt-get install php
+   14  sudo apt-get install php-fpm php-mysql php-mbstring php-xml php-curl php-json 
+   15  sudo apt-get install php-zip
+   16  sudo nano /etc/php/7.1/fpm/php.ini
+   17  sudo systemctl restart php7.0-fpm
+   18  sudo systemctl restart php7.1-fpm
+   19  cd /var/www/
+   20  mkdir chancews
+   21  sudo mkdir chancews
+   22  sudo fallocate -l 1G /swapfile
+   23  sudo mkswap /swapfile
+   24  sudo swapon /swapfile
+   25  cd ..
+   26  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+   27  cd home/allix/
+   28  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+   29  php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+   30  php composer-setup.php
+   31  php -r "unlink('composer-setup.php');"
+   32  mv composer.phar /usr/local/bin/composer
+   33  sudo mv composer.phar /usr/local/bin/composer
+   34  composer
+   35  git
+   36  cd /var/
+   37  mkdir repo; cd repo
+   38  sudo mkdir repo; cd repo
+   39  sudo mkdir repo
+   40  cd repo/
+   41  mkdir chancews.git
+   42  sudo mkdir chancews.git
+   43  cd chancews.git/
+   44  git init --bare
+   45  sudo git init --bare
+   46  cd hooks/
+   47  sudo nano post-receive
+   48  sudo chmod +x post-receive 
+   49  cd /var/www/
+   50  ls
+   51  cd chancews/
+   52  ls
+   53  cd ..
+   54  cd repo/
+   55  cd ..
+   56  cd repo/chancews.git/
+   57  nano hooks/post-receive 
+   58  ls -la
+   59  cd ..
+   60  sudo chown -R allix:allix repo/
+   61  ls -l
+   62  cd repo/chancews.git/hooks/
+   63  ls
+   64  ls -la
+   65  cd /var/www/
+   66  cd chancews/
+   67  ls
+   68  ls -la
+   69  cd ..
+   70  sudo rm -r chancews/
+   71  mkdir chancews
+   72  sudo mkdir chancews
+   73  cd chancews/
+   74  ls
+   75  ls -la
+   76  cd /var/
+   77  ls -la
+   78  ls -l
+   79  cd repo/
+   80  ls
+   81  ls -l
+   82  cd chancews.git/
+   83  ls
+   84  cd /var/www/chancews/
+   85  git init
+   86  cd ..
+   87  ls -l
+   88  sudo chmod -R ug+w /var/www/chancews/
+   89  sudo chown -R allix:allix /var/www/chancews/
+   90  cd chancews/
+   91  ls
+   92  cd ..
+   93  ls -l
+   94  cd html/
+   95  ls
+   96  nano index.html 
+   97  nano index.php
+   98  sudo nano index.php
+   99  ls
+  100  sudo rm -r index.html 
+  101  ls
+  102  nano index.php 
+  103  sudo nano index.php
+  104  cd ..
+  105  cd chancews/
+  106  ls
+  107  composer install --no-dev
+  108  cd ..
+  109  sudo chown -R :www-data /var/www/chancews/
+  110  sudo chown -R 775 /var/www/chancews/
+  111  sudo chown -R 755 /var/www/chancews/
+  112  sudo chown -R :www-data /var/www/chancews/
+  113  sudo chmod -R 755 /var/www/chancews/
+  114  sudo chmod -R 775 /var/www/chancews/storage/
+  115  sudo chmod -R 775 /var/www/chancews/bootstrap/cache/
+  116  ls
+  117  ls -l
+  118  cd ..
+  119  sudo apt-get install phpmyadmin php-mbstring php-gettext
+  120  sudo phpenmod mcrypt
+  121  sudo phpenmod mbstring
+  122  sudo systemctl restart apache2
+  123  sudo nano /etc/apache2/conf-available/phpmyadmin.conf
+  124  sudo systemctl restart apache2
+  125  sudo nano /usr/share/phpmyadmin/.htaccess
+  126  sudo apt-get install apache2-utils
+  127  sudo htpasswd -c /etc/phpmyadmin/.htpasswd aecbphpadmin
+
+/*** laravel permisions */
+
+This is making the :www-data user (which is Nginx) the
+permissions to be an owner (and in turn do whatever it 
+wants) to the /var/www/laravel/ folder. 
+This is where our project is, so we want to make sure 
+that our server has full access to this folder and can 
+save files (such as file uploads) or write to files 
+(such as log files).
+
+git remote add production ssh://root@example.com/var/repo/site.git
+
+composer install --no-dev
+
+sudo chown -R :www-data /var/www/laravel
+
+sudo chmod -R 775 /var/www/laravel/storage
+
+sudo chmod -R 775 /var/www/laravel/bootstrap/cache
+
+/** vps bare repo **/
+git push production local_branch:repo_branch(eg => master) 

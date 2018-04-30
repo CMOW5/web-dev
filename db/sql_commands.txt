@@ -1,0 +1,19 @@
+
+
+/* ADD column to an existing table */
+
+ALTER TABLE table_name
+  ADD column_name column-definition;
+
+ex =>
+
+ALTER TABLE employees
+  ADD last_name VARCHAR(50);
+
+
+//////////////////////
+
+/* INSERT new entry into an existing table */
+
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);   

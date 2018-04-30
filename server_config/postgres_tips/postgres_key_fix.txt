@@ -1,0 +1,6 @@
+sudo -i -u postgres
+
+psql
+
+SELECT pg_catalog.setval(pg_get_serial_sequence('propiedades_item', 'id'), MAX(id)) FROM propiedades_item;
+
