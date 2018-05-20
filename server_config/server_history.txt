@@ -146,5 +146,9 @@ sudo chmod -R 775 /var/www/laravel/storage
 
 sudo chmod -R 775 /var/www/laravel/bootstrap/cache
 
+// permision denied fix
+sudo chgrp -R www-data storage bootstrap/cache
+sudo chmod -R ug+rwx storage bootstrap/cache
+
 /** vps bare repo **/
 git push production local_branch:repo_branch(eg => master) 
