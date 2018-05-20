@@ -1,0 +1,17 @@
+Para 000whost
+
+https://trucoslaravel54.blogspot.com.co/2017/07/solucion-error-errorexception-in.html?m=1
+
+En apache
+
+1. modifiar el archivo /etc/apache2/apache2.conf
+Biscar la linea donde dice 
+《Directory /var/www》
+
+- Poner donde dice allow override  all en vez de none
+
+- Agregar al final del archivo ServerName localhost
+
+2. Ejecutar en la terminal sudo a2enmod rewrite 
+
+3. Reiniciar apache
