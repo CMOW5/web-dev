@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <form action="/my-handling-form-page" method="post">
+        <div>
+          <!-- for is a formal way to link a label to a form widget -->
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name" value="default name value" >
+        </div>
+        <div>
+          <label for="mail">E-mail:</label>
+          <input type="email" id="mail" name="user_mail" value="default email value">
+        </div>
+        <div>
+          <label for="msg">Message:</label>
+          <textarea id="msg" name="user_message">default text value</textarea>
+        </div>
+        <div class="button">
+          <button type="submit">Send your message</button>
+        </div>
+      </form>
+  </body>
+</html>
